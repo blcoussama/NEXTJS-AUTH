@@ -19,7 +19,7 @@ import { useState } from "react";
 import { register } from "@/actions/register";
 import { FormSuccess } from "../FormSuccess";
 import { FormError } from "../FormError";
-// import GoogleLogin  from "../google-login";
+// import GoogleLogin  from "../GoogleLogin";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
