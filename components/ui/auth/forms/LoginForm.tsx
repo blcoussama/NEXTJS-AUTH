@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { FormError } from "../FormError";
 import { login } from "@/actions/login"
-// import GoogleLogin  from "../GoogleLogin";
+import GoogleLogin  from "../GoogleButton";
 import Link from "next/link"
 
 const LoginForm = () => {
@@ -100,7 +100,7 @@ const LoginForm = () => {
           </Button>
         </form>
       </Form>
-      {/* <GoogleLogin /> */}
+      <GoogleLogin />
     </CardWrapper>
   )
 }
