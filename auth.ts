@@ -11,6 +11,21 @@ export const { auth, handlers: { GET, POST }, signIn, signOut } = NextAuth({
     session: { strategy: "jwt" },
     ...authConfig,
     callbacks: {
+        async signIn({ user, account }) {
+            if(account?.provider !== "credentials") {
+                return true
+            }
+
+            if(!user.id) return false
+
+            const existingUser = await getUserById(user.id)
+            
+            if(!existingUser?.emailVerified) {
+                return false
+            }
+
+            return true
+        },
         async jwt({token}) {
 
             if(!token.sub) return token;
